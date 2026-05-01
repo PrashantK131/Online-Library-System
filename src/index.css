@@ -1,1 +1,42 @@
 @import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background-color: #faf7f2;
+    color: #1c1917;
+  }
+}
+
+::-webkit-scrollbar { 
+  width: 8px; 
+}
+::-webkit-scrollbar-track { 
+  background: #fef3c7; 
+}
+::-webkit-scrollbar-thumb { 
+  background: #d97706; border-radius: 4px; 
+}
+
+.book-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.book-card:hover {
+  transform: translateY(-4px) rotate(0.5deg);
+  box-shadow: 0 12px 30px rgba(120, 53, 15, 0.2);
+}
+
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; transform: translateY(24px); 
+  }
+  to { 
+    opacity: 1; transform: translateY(0); 
+  }
+}
+
+.fade-in { animation: fadeInUp 0.5s ease both; }
+.fade-in-delay-1 { animation-delay: 0.1s; }
+.fade-in-delay-2 { animation-delay: 0.2s; }
+.fade-in-delay-3 { animation-delay: 0.3s; }
+.fade-in-delay-4 { animation-delay: 0.4s; }
