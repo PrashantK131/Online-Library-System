@@ -8,11 +8,12 @@ import BookCard from '../components/BookCard';
 const ALL_CATEGORIES = ['All', 'Fiction', 'Non-Fiction', 'Sci-Fi', 'Fantasy', 'Mystery'];
 
 function BrowseBooksPage() {
-    const { category: urlCategory } = useParams(); // Category from dynamic route /books/:category
+    // Category from dynamic route /books/:category
+    const { category: urlCategory } = useParams(); 
     const navigate = useNavigate();
     const { books } = useSelector((state) => state.books);
 
-    // Determine the active category from URL or default to 'All'
+    // Determines the active category from URL or default to 'All'
     const activeCategory = urlCategory ? ALL_CATEGORIES.find((c) => c.toLowerCase() === urlCategory.toLowerCase()) || 'All' : 'All';
 
     // Local state for the search query

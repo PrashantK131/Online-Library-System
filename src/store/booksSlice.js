@@ -137,7 +137,7 @@ const initialBooks = [
     },
 ];
 
-// Create the books slice with initial state and reducers
+// Creating the books slice with initial state and reducers
 const booksSlice = createSlice({
     name: 'books',
     initialState: {
@@ -148,7 +148,7 @@ const booksSlice = createSlice({
         addBook: (state, action) => {
             const newBook = {
                 ...action.payload,
-                id: Date.now(), // Use timestamp as unique ID
+                id: Date.now(), 
                 rating: parseFloat(action.payload.rating) || 0,
                 pages: parseInt(action.payload.pages) || 0,
                 year: parseInt(action.payload.year) || new Date().getFullYear(),

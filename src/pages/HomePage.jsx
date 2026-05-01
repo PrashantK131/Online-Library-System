@@ -13,7 +13,7 @@ const CATEGORIES = [
 ];
 
 function HomePage() {
-  // Get books from Redux store and pick the first 6 as "popular"
+    // Get books from Redux store and picking the first 6 as "popular"
     const { books } = useSelector((state) => state.books);
     const popularBooks = books.slice(0, 6);
 
@@ -21,7 +21,7 @@ function HomePage() {
         <div className="min-h-screen page-texture">
             {/* ── Hero section ── */}
             <section className="bg-gradient-to-br from-amber-900 via-amber-800 to-stone-900 text-amber-50 py-20 px-4 text-center relative overflow-hidden">
-                {/* Decorative circles */}
+                
                 <div className="absolute top-0 left-0 w-72 h-72 bg-amber-600 rounded-full opacity-10 -translate-x-1/2 -translate-y-1/2" />
                 <div className="absolute bottom-0 right-0 w-96 h-96 bg-stone-600 rounded-full opacity-10 translate-x-1/3 translate-y-1/3" />
 

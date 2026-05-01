@@ -22,7 +22,7 @@ function BookDetailsPage() {
     // Find the book by id
     const book = books.find((b) => String(b.id) === String(id));
 
-    // Handle book not found
+    // Handle book if not found
     if (!book) {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center bg-stone-50 px-4">
@@ -36,7 +36,7 @@ function BookDetailsPage() {
 
     return (
         <div className="min-h-screen bg-stone-50 page-texture">
-        {/* Breadcrumb navigation */}
+
             <div className="bg-amber-900 text-amber-200 text-sm px-4 py-2">
                 <div className="max-w-5xl mx-auto flex items-center gap-2">
                     <Link to="/" className="hover:text-white transition-colors">Home</Link>

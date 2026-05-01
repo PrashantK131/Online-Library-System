@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addBook } from '../store/booksSlice';
 
-// Category options available for selection
+// Categories available for selection
 const CATEGORIES = ['Fiction', 'Non-Fiction', 'Sci-Fi', 'Fantasy', 'Mystery'];
 
 // Initial form state
@@ -41,7 +41,7 @@ const AddBookPage = () => {
         }
     };
 
-    // Validate all required fields and return errors object
+    // Validates all required field and returns the error object
     const validate = () => {
         const newErrors = {};
         if (!form.title.trim()){       
@@ -67,7 +67,7 @@ const AddBookPage = () => {
         
 
         const year = parseInt(form.year);
-        
+
         if (form.year && (isNaN(year) || year < 1000 || year > new Date().getFullYear()))
         newErrors.year = `Year must be between 1000 and ${new Date().getFullYear()}.`;
 
@@ -79,7 +79,7 @@ const AddBookPage = () => {
         return newErrors;
     };
 
-    // Handle form submission
+    // Handles form submission
     const handleSubmit = (e) => {
         e.preventDefault();
         const validationErrors = validate();
@@ -93,13 +93,13 @@ const AddBookPage = () => {
         dispatch(addBook(form));
         setSubmitted(true);
 
-        // Redirect to Browse Books page after a short delay
+        // Redirect to Browse Books page 
         setTimeout(() => {
             navigate('/books');
         }, 1500);
     };
 
-  // Helper: shared classes for form inputs
+    // Helper: shared classes for form inputs
     const inputCls = (field) =>
         `w-full px-4 py-2.5 rounded-xl border text-sm bg-white text-stone-800 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent placeholder-stone-400 transition-all ${
         errors[field] ? 'border-red-400 bg-red-50' : 'border-amber-200'

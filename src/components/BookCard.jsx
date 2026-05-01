@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 
 // Renders star icons based on rating value
-function StarRating({ rating }) {
+function StarRating({rating}) {
     const full = Math.floor(rating);
     const half = rating % 1 >= 0.5;
     const empty = 5 - full - (half ? 1 : 0);
@@ -16,7 +16,7 @@ function StarRating({ rating }) {
 };
 
 // Fallback cover using initials when no image URL provided
-function FallbackCover({ title, category }) {
+function FallbackCover({title, category}) {
     const colors = {
         Fiction: 'from-rose-700 to-rose-900',
         'Non-Fiction': 'from-blue-700 to-blue-900',
@@ -32,7 +32,7 @@ function FallbackCover({ title, category }) {
     );
 };
 
-function BookCard({ book }) {
+function BookCard({book}) {
     return (
         <div className="book-card bg-white rounded-xl overflow-hidden shadow-md border border-amber-100 flex flex-col h-full">
             {/* Book cover */}
