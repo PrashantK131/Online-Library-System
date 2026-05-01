@@ -1,4 +1,4 @@
-// App.jsx — root component that sets up routing for the entire application
+// Root component that sets up routing for the entire application
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
@@ -11,14 +11,14 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* 404 route — no Navbar as per requirements */}
+        {/* 404 route — no Navbar */}
         <Route path="*" element={<NotFoundPage />} />
 
         {/* All other routes wrapped with Navbar */}
         <Route path="/" element={<><Navbar /><HomePage /></>} />
         <Route path="/books" element={<><Navbar /><BrowseBooksPage /></>} />
-        
-        {/* Dynamic route: filter books by category */}
+
+        {/* Dynamic route: filters book by category */}
         <Route path="/books/:category" element={<><Navbar /><BrowseBooksPage /></>} />
 
         {/* Dynamic route: individual book details */}
